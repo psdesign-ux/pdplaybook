@@ -2,7 +2,7 @@
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El futuro agéntico del product design</title>
+  <title>AI Playbook de Diseño — Volumen Product Design</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -273,22 +273,77 @@
     .flow {
       display: flex;
       align-items: center;
-      gap: 0.375rem;
+      gap: 0.55rem;
       margin-top: 1.25rem;
       flex-wrap: wrap;
     }
     .fbox {
-      padding: 0.3rem 0.75rem;
-      border-radius: 0.5rem;
+      padding: 0.38rem 0.82rem;
+      border-radius: 0.6rem;
       border: 1px solid var(--border);
-      background: var(--ink-3);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
       font-family: var(--fm);
-      font-size: 0.5625rem;
-      letter-spacing: 0.04em;
+      font-size: 0.56rem;
+      letter-spacing: 0.05em;
       color: var(--dim);
       white-space: nowrap;
+      position: relative;
     }
-    .farr { font-size: 0.5625rem; color: var(--faint); }
+    .fbox.hi {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      box-shadow: 0 0 0 1px rgba(244,243,239,0.06) inset;
+    }
+    .farr {
+      font-size: 0.55rem;
+      color: var(--white);
+      background: rgba(244,243,239,0.10);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      width: 1.3rem;
+      height: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .new-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.75rem;
+      padding: 0.28rem 0.55rem;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: rgba(244,243,239,0.06);
+      font-family: var(--fm);
+      font-size: 0.5rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .new-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .95;
+    }
+    .t-points {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+    .t-points li {
+      border: 1px solid var(--border);
+      border-radius: 0.65rem;
+      padding: 0.62rem 0.72rem;
+      background: var(--ink-2);
+      font-size: 0.73rem;
+      line-height: 1.55;
+      color: var(--dim);
+    }
+    .t-points strong { color: var(--white); font-weight: 500; }
 
     .tlink {
       display: inline-flex;
@@ -363,6 +418,55 @@
     .item-title { font-size: 0.75rem; font-weight: 500; color: var(--white); margin-bottom: 0.125rem; }
     .item-sub { font-size: 0.6875rem; color: var(--dim); line-height: 1.5; }
 
+    /* ── OVERVIEW & STRATEGY ── */
+    .ov-h {
+      font-family: var(--fd);
+      font-size: clamp(1.7rem, 4.2vw, 3rem);
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .ov-sub {
+      color: var(--dim);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      max-width: 720px;
+      margin-bottom: 1.1rem;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .ov-card {
+      border: 1px solid var(--border);
+      background: var(--ink-2);
+      border-radius: 0.85rem;
+      padding: 0.9rem;
+    }
+    .ov-kicker { font-family: var(--fm); font-size: 0.52rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+    .ov-title { font-size: 0.93rem; color: var(--white); margin: 0.35rem 0; font-weight: 600; }
+    .ov-copy { font-size: 0.72rem; color: var(--dim); line-height: 1.5; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .mcell {
+      border: 1px solid var(--border);
+      border-radius: 0.7rem;
+      padding: 0.65rem;
+      background: var(--ink-2);
+      font-size: 0.7rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .mcell strong { color: var(--white); }
+
     /* ── CIERRE ── */
     .close-h {
       font-family: var(--fd);
@@ -419,6 +523,10 @@
     .s3 .tlink { color: var(--t3); border-color: var(--t3); }
     .s3 .tlink:hover { background: var(--t3g); }
 
+    .s1 .new-tag { color: var(--t1); border-color: rgba(122,175,110,0.35); background: rgba(122,175,110,0.10); }
+    .s2 .new-tag { color: var(--t2); border-color: rgba(110,143,175,0.35); background: rgba(110,143,175,0.10); }
+    .s3 .new-tag { color: var(--t3); border-color: rgba(175,138,110,0.35); background: rgba(175,138,110,0.10); }
+
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       body { overflow: auto; height: auto; }
@@ -454,6 +562,8 @@
       }
       .t-num { font-size: 2rem; }
 
+      .overview-grid { grid-template-columns: 1fr; }
+      .matrix { grid-template-columns: 1fr; }
       .close-grid { grid-template-columns: 1fr; }
       .screenshot-img {
         max-height: none !important;
@@ -486,19 +596,19 @@
   <!-- SLIDE 0: COVER -->
   <div class="slide active" data-i="0">
     <div class="cover-eye">CoE Diseño &amp; Experiencia · Pacífico Salud · 2026</div>
-    <h1 class="cover-h1">El futuro<br><em>agéntico</em><br>en product design.</h1>
+    <h1 class="cover-h1">AI Playbook<br><em>de diseño</em><br>volumen Product Design.</h1>
     <p class="cover-sub">
-      Tres tracks que redefinen cómo el equipo de diseño
-      prototipa, implementa y construye producto — con AI como colaborador activo.
+      Tres tracks que estamos explorando para redefinir cómo diseño
+      explora, diseña y construye producto — con AI como colaborador activo.
     </p>
     <div class="cover-pills">
-      <div class="pill" onclick="goTo(1)">
+      <div class="pill" onclick="goTo(2)">
         <span class="pill-dot" style="background:var(--t1)"></span>01 — Prototipado rápido
       </div>
-      <div class="pill" onclick="goTo(2)">
+      <div class="pill" onclick="goTo(3)">
         <span class="pill-dot" style="background:var(--t2)"></span>02 — Research to Code
       </div>
-      <div class="pill" onclick="goTo(3)">
+      <div class="pill" onclick="goTo(4)">
         <span class="pill-dot" style="background:var(--t3)"></span>03 — Digital Twins
       </div>
     </div>
@@ -510,8 +620,40 @@
     </div>
   </div>
 
-  <!-- SLIDE 1: TRACK 1 -->
-  <div class="slide s1" data-i="1">
+  <!-- SLIDE 1: VISIÓN GENERAL -->
+  <div class="slide" data-i="1">
+    <h2 class="ov-h">Cómo queda la presentación ahora:</h2>
+    <p class="ov-sub">
+      Reordenamos el deck para que cuente la historia completa: qué está cambiando,
+      en qué parte del proceso interviene cada track y qué capacidades nuevas estamos
+      desarrollando como equipo de diseño de producto.
+    </p>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <div class="ov-kicker">01 · Exploración</div>
+        <div class="ov-title">Prototipado rápido con AI</div>
+        <div class="ov-copy">Del problema a un prototipo testeable en horas, sin depender de Figma para validar rápido.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">02 · Build</div>
+        <div class="ov-title">Research to Code</div>
+        <div class="ov-copy">Del insight a un piloto desplegado, acortando la distancia entre diseño y ejecución.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">03 · Estrategia</div>
+        <div class="ov-title">Digital Twins</div>
+        <div class="ov-copy">Exploración integral de producto con escenarios vivos para decidir mejor y más rápido.</div>
+      </div>
+    </div>
+    <div class="matrix">
+      <div class="mcell"><strong>Qué cambia:</strong><br>Diseño deja de “entregar” y empieza a “operar” producto.</div>
+      <div class="mcell"><strong>Qué ganamos:</strong><br>Velocidad de aprendizaje, menos espera y más pilotos reales.</div>
+      <div class="mcell"><strong>Qué habilita:</strong><br>Nuevos roles híbridos: diseñador-builder, PM asistido por AI y orquestación de experimentos.</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: TRACK 1 -->
+  <div class="slide s1" data-i="2">
     <div class="t-top">
       <div class="t-num">01</div>
       <div class="t-meta">
@@ -522,12 +664,13 @@
     </div>
     <div class="t-body">
       <div>
-        <p class="t-desc">
-          Un pipeline de <strong>tres skills en Claude</strong> que convierte una necesidad
-          de usuario en un prototipo HTML funcional — sin Figma, sin código manual,
-          el mismo día. Pensado para <strong>service designers</strong> que necesitan
-          algo testeable con usuarios reales rápidamente.
-        </p>
+        <div class="new-tag"><span class="new-dot"></span> Nuevo en camino</div>
+        <ul class="t-points">
+          <li><strong>Descripción:</strong> pipeline de tres skills en Claude que convierte una necesidad de usuario en un prototipo HTML funcional, sin Figma y sin código manual.</li>
+          <li><strong>Proceso impactado:</strong> exploración temprana de solución.</li>
+          <li><strong>Caso de uso:</strong> cuando una/o service designer necesita construir algo rápido y testeable con usuarios reales, en el mismo día.</li>
+          <li><strong>Skills desarrolladas:</strong> UX Designer, Frontend Developer y UI Engineer.</li>
+        </ul>
         <div class="flow">
           <div class="fbox">UX Designer</div>
           <div class="farr">→</div>
@@ -565,8 +708,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 2: TRACK 2 -->
-  <div class="slide s2" data-i="2">
+  <!-- SLIDE 3: TRACK 2 -->
+  <div class="slide s2" data-i="3">
     <div class="t-top">
       <div class="t-num">02</div>
       <div class="t-meta">
@@ -577,13 +720,14 @@
     </div>
     <div class="t-body">
       <div>
-        <p class="t-desc">
-          De un insight de investigación a una <strong>solución desplegable en URL</strong> —
-          sin intermediarios. El equipo de diseño implementa directamente
-          usando el repositorio con componentes y design system.
-          <br><br>
-          En proceso: definiendo gobierno con TI y Riesgo sobre alcance y límites.
-        </p>
+        <div class="new-tag"><span class="new-dot"></span> Nuevo en camino</div>
+        <ul class="t-points">
+          <li><strong>Descripción:</strong> de un insight de investigación a una solución desplegable en URL, sin intermediarios, usando repositorio y design system.</li>
+          <li><strong>Proceso impactado:</strong> diseñar y construir directo desde research.</li>
+          <li><strong>Caso de uso:</strong> lanzar pilotos rápido sin depender de TI para cada iteración.</li>
+          <li><strong>Skills desarrolladas:</strong> Product Designer Builder, Prompt Engineer de producto y QA funcional asistido por AI.</li>
+          <li><strong>Estado actual:</strong> en proceso, definiendo gobierno con TI y Riesgo sobre alcance y límites.</li>
+        </ul>
         <div class="flow">
           <div class="fbox">Research</div>
           <div class="farr">→</div>
@@ -605,8 +749,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 3: TRACK 3 -->
-  <div class="slide s3" data-i="3">
+  <!-- SLIDE 4: TRACK 3 -->
+  <div class="slide s3" data-i="4">
     <div class="t-top">
       <div class="t-num">03</div>
       <div class="t-meta">
@@ -617,12 +761,13 @@
     </div>
     <div class="t-body">
       <div>
-        <p class="t-desc">
-          Un repositorio interno donde <strong>prompts agregan funcionalidades completas</strong>
-          en minutos — consumiendo el mismo design system del Track 2.
-          El resultado: un gemelo digital del producto que evoluciona
-          al ritmo de la investigación, no del sprint de desarrollo.
-        </p>
+        <div class="new-tag"><span class="new-dot"></span> Nuevo en camino</div>
+        <ul class="t-points">
+          <li><strong>Descripción:</strong> repositorio interno donde prompts agregan funcionalidades completas en minutos, usando el mismo design system del Track 2.</li>
+          <li><strong>Proceso impactado:</strong> exploración integral de diseño y producto.</li>
+          <li><strong>Caso de uso:</strong> evaluar rutas de producto y experiencia con un gemelo digital que evoluciona al ritmo de la investigación.</li>
+          <li><strong>Skills desarrolladas:</strong> Product Manager asistido por AI, Diseñador/a sistémico/a y Orquestador/a de experimentos.</li>
+        </ul>
         <div class="flow">
           <div class="fbox">Prompt</div>
           <div class="farr">→</div>
@@ -644,8 +789,42 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: CIERRE -->
-  <div class="slide" data-i="4">
+  <!-- SLIDE 5: SKILLS DEL EQUIPO -->
+  <div class="slide" data-i="5">
+    <h2 class="ov-h">Skills que estamos desarrollando</h2>
+    <p class="ov-sub">No somos solo product designers: estamos trabajando un perfil híbrido entre diseño, desarrollo y gestión de producto.</p>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <div class="ov-kicker">Track 1</div>
+        <div class="ov-title">Diseñador/a Builder</div>
+        <div class="ov-copy">Capaz de prototipar interfaces funcionales y listas para test en tiempo corto.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">Track 2</div>
+        <div class="ov-title">Diseño que implementa</div>
+        <div class="ov-copy">Traduce investigación en código y pilotos, con criterios de QA funcional.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">Track 3</div>
+        <div class="ov-title">PM asistido por AI</div>
+        <div class="ov-copy">Prioriza hipótesis, orquesta experimentos y decide con evidencia más rápido.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: ROADMAP -->
+  <div class="slide" data-i="6">
+    <h2 class="ov-h">Qué sigue (próximos 90 días)</h2>
+    <div class="matrix">
+      <div class="mcell"><strong>Mes 1</strong><br>Formalizar guías de uso por track y criterios de éxito por piloto.</div>
+      <div class="mcell"><strong>Mes 2</strong><br>Escalar pilotos en 2 frentes críticos y cerrar brechas con TI/Riesgo.</div>
+      <div class="mcell"><strong>Mes 3</strong><br>Estandarizar prácticas y definir playbook operativo de diseño + AI.</div>
+    </div>
+    <p class="ov-sub" style="margin-top:1rem;">Meta: pasar de iniciativas aisladas a un sistema de trabajo repetible y medible.</p>
+  </div>
+
+  <!-- SLIDE 7: CIERRE -->
+  <div class="slide" data-i="7">
     <h2 class="close-h">Tres tracks.<br>Un equipo<br>que <em style="color:var(--t1)">construye.</em></h2>
     <div class="close-grid">
       <div class="close-card">
@@ -666,7 +845,7 @@
     </div>
     <p class="close-quote">
       El diseño ya no termina en el entregable.<br>
-      Termina cuando el usuario puede probar algo real.
+      Termina cuando el usuario puede probar algo real, rápido y sin fricción.
     </p>
   </div>
 
