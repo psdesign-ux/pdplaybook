@@ -418,6 +418,55 @@
     .item-title { font-size: 0.75rem; font-weight: 500; color: var(--white); margin-bottom: 0.125rem; }
     .item-sub { font-size: 0.6875rem; color: var(--dim); line-height: 1.5; }
 
+    /* ── OVERVIEW & STRATEGY ── */
+    .ov-h {
+      font-family: var(--fd);
+      font-size: clamp(1.7rem, 4.2vw, 3rem);
+      font-style: italic;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .ov-sub {
+      color: var(--dim);
+      font-size: 0.85rem;
+      line-height: 1.65;
+      max-width: 720px;
+      margin-bottom: 1.1rem;
+    }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .ov-card {
+      border: 1px solid var(--border);
+      background: var(--ink-2);
+      border-radius: 0.85rem;
+      padding: 0.9rem;
+    }
+    .ov-kicker { font-family: var(--fm); font-size: 0.52rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+    .ov-title { font-size: 0.93rem; color: var(--white); margin: 0.35rem 0; font-weight: 600; }
+    .ov-copy { font-size: 0.72rem; color: var(--dim); line-height: 1.5; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .mcell {
+      border: 1px solid var(--border);
+      border-radius: 0.7rem;
+      padding: 0.65rem;
+      background: var(--ink-2);
+      font-size: 0.7rem;
+      line-height: 1.45;
+      color: var(--dim);
+    }
+    .mcell strong { color: var(--white); }
+
     /* ── CIERRE ── */
     .close-h {
       font-family: var(--fd);
@@ -513,6 +562,8 @@
       }
       .t-num { font-size: 2rem; }
 
+      .overview-grid { grid-template-columns: 1fr; }
+      .matrix { grid-template-columns: 1fr; }
       .close-grid { grid-template-columns: 1fr; }
       .screenshot-img {
         max-height: none !important;
@@ -551,13 +602,13 @@
       explora, diseña y construye producto — con AI como colaborador activo.
     </p>
     <div class="cover-pills">
-      <div class="pill" onclick="goTo(1)">
+      <div class="pill" onclick="goTo(2)">
         <span class="pill-dot" style="background:var(--t1)"></span>01 — Prototipado rápido
       </div>
-      <div class="pill" onclick="goTo(2)">
+      <div class="pill" onclick="goTo(3)">
         <span class="pill-dot" style="background:var(--t2)"></span>02 — Research to Code
       </div>
-      <div class="pill" onclick="goTo(3)">
+      <div class="pill" onclick="goTo(4)">
         <span class="pill-dot" style="background:var(--t3)"></span>03 — Digital Twins
       </div>
     </div>
@@ -569,8 +620,40 @@
     </div>
   </div>
 
-  <!-- SLIDE 1: TRACK 1 -->
-  <div class="slide s1" data-i="1">
+  <!-- SLIDE 1: VISIÓN GENERAL -->
+  <div class="slide" data-i="1">
+    <h2 class="ov-h">Cómo queda la presentación ahora:</h2>
+    <p class="ov-sub">
+      Reordenamos el deck para que cuente la historia completa: qué está cambiando,
+      en qué parte del proceso interviene cada track y qué capacidades nuevas estamos
+      desarrollando como equipo de diseño de producto.
+    </p>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <div class="ov-kicker">01 · Exploración</div>
+        <div class="ov-title">Prototipado rápido con AI</div>
+        <div class="ov-copy">Del problema a un prototipo testeable en horas, sin depender de Figma para validar rápido.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">02 · Build</div>
+        <div class="ov-title">Research to Code</div>
+        <div class="ov-copy">Del insight a un piloto desplegado, acortando la distancia entre diseño y ejecución.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">03 · Estrategia</div>
+        <div class="ov-title">Digital Twins</div>
+        <div class="ov-copy">Exploración integral de producto con escenarios vivos para decidir mejor y más rápido.</div>
+      </div>
+    </div>
+    <div class="matrix">
+      <div class="mcell"><strong>Qué cambia:</strong><br>Diseño deja de “entregar” y empieza a “operar” producto.</div>
+      <div class="mcell"><strong>Qué ganamos:</strong><br>Velocidad de aprendizaje, menos espera y más pilotos reales.</div>
+      <div class="mcell"><strong>Qué habilita:</strong><br>Nuevos roles híbridos: diseñador-builder, PM asistido por AI y orquestación de experimentos.</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: TRACK 1 -->
+  <div class="slide s1" data-i="2">
     <div class="t-top">
       <div class="t-num">01</div>
       <div class="t-meta">
@@ -625,8 +708,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 2: TRACK 2 -->
-  <div class="slide s2" data-i="2">
+  <!-- SLIDE 3: TRACK 2 -->
+  <div class="slide s2" data-i="3">
     <div class="t-top">
       <div class="t-num">02</div>
       <div class="t-meta">
@@ -666,8 +749,8 @@
     </div>
   </div>
 
-  <!-- SLIDE 3: TRACK 3 -->
-  <div class="slide s3" data-i="3">
+  <!-- SLIDE 4: TRACK 3 -->
+  <div class="slide s3" data-i="4">
     <div class="t-top">
       <div class="t-num">03</div>
       <div class="t-meta">
@@ -706,8 +789,42 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: CIERRE -->
-  <div class="slide" data-i="4">
+  <!-- SLIDE 5: SKILLS DEL EQUIPO -->
+  <div class="slide" data-i="5">
+    <h2 class="ov-h">Skills que estamos desarrollando</h2>
+    <p class="ov-sub">No somos solo product designers: estamos trabajando un perfil híbrido entre diseño, desarrollo y gestión de producto.</p>
+    <div class="overview-grid">
+      <div class="ov-card">
+        <div class="ov-kicker">Track 1</div>
+        <div class="ov-title">Diseñador/a Builder</div>
+        <div class="ov-copy">Capaz de prototipar interfaces funcionales y listas para test en tiempo corto.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">Track 2</div>
+        <div class="ov-title">Diseño que implementa</div>
+        <div class="ov-copy">Traduce investigación en código y pilotos, con criterios de QA funcional.</div>
+      </div>
+      <div class="ov-card">
+        <div class="ov-kicker">Track 3</div>
+        <div class="ov-title">PM asistido por AI</div>
+        <div class="ov-copy">Prioriza hipótesis, orquesta experimentos y decide con evidencia más rápido.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: ROADMAP -->
+  <div class="slide" data-i="6">
+    <h2 class="ov-h">Qué sigue (próximos 90 días)</h2>
+    <div class="matrix">
+      <div class="mcell"><strong>Mes 1</strong><br>Formalizar guías de uso por track y criterios de éxito por piloto.</div>
+      <div class="mcell"><strong>Mes 2</strong><br>Escalar pilotos en 2 frentes críticos y cerrar brechas con TI/Riesgo.</div>
+      <div class="mcell"><strong>Mes 3</strong><br>Estandarizar prácticas y definir playbook operativo de diseño + AI.</div>
+    </div>
+    <p class="ov-sub" style="margin-top:1rem;">Meta: pasar de iniciativas aisladas a un sistema de trabajo repetible y medible.</p>
+  </div>
+
+  <!-- SLIDE 7: CIERRE -->
+  <div class="slide" data-i="7">
     <h2 class="close-h">Tres tracks.<br>Un equipo<br>que <em style="color:var(--t1)">construye.</em></h2>
     <div class="close-grid">
       <div class="close-card">
